@@ -15,34 +15,27 @@ async function postData(url = '', data = {}) {
   });
   return response.json(); // parses JSON response into native JavaScript objects
 }
-async function getapi(url) {
-  // Storing response 
-const response = await fetch(url)
-// Storing data in form of JSON 
-var data = await response.json()
+var login_session = []
 
-show(data)
-}
-const check_users ='https://chitter-backend-api-v2.herokuapp.com/users'
-
-
-
-// 0: {id: 1, handle: "edward"}
-function newUser() {
+function LogInUser() {
 
   let username = document.getElementById("myInputUsername").value
   let password = document.getElementById("myInputPassword").value
 
   // alert("'"+username +"'" + " This name is already taken please choose another Hint Add numbers and underscores");
-  let object = {"user": {"handle":username, "password":password}};
-  console.log(object)
+  let object = {"session": {"handle":username, "password":password}};
 
-  postData('https://chitter-backend-api-v2.herokuapp.com/users', object)
-  .then(data => {
-  console.log(data); // JSON data parsed by `data.json()` call
-  });
-  // 193: {id: 290, handle: "TestingJack"}
+
+  postData('https://chitter-backend-api-v2.herokuapp.com/sessions', object)
+  .then(data => console.log(login_session.push(data))); // JSON data parsed by `data.json()` call
 }
+ 
+
+
+
+
+
+
 
 
 

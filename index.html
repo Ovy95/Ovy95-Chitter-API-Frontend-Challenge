@@ -14,7 +14,21 @@
 </head>
 
 <body>
+  <script src="src/signup.js"></script> 
+  <script src="src/login.js"></script> 
+  <div id="myDIV" class="header">
+    <h2 style="margin:5px">Signup/Login</h2>
+    <label for="username">Username:</label><input type="text" id="myInputUsername" placeholder="Username">
+    <label for="password">Password:</label><input type="text" id="myInputPassword" placeholder="Password">
+
+    <span onclick="newUser()" class="addBtn">signup</span>
+
+    <span onclick="LogInUser()"  class="addBtn">Login</span>
+  </div>
+  
   <h2>Chitter</h2>
+
+
         <div class="tweets">
           <h1>Peeps</h1> 
           <!-- table for showing data -->

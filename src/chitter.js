@@ -7,9 +7,14 @@ fetch(api).then(function (response) {
 	console.warn('Something went wrong.', err);
 });
 }
-  const api_url = 'https://chitter-backend-api-v2.herokuapp.com/peeps'
-  api_checker(api_url)
-  // Defining async function 
+// api_checker(check_users)
+
+    // This is for checking the useraccounts 
+  // const check_users ='https://chitter-backend-api-v2.herokuapp.com/users'
+
+// All tweets 
+const all_tweets_url = 'https://chitter-backend-api-v2.herokuapp.com/peeps'
+
   async function getapi(url) {
       // Storing response 
     const response = await fetch(url)
@@ -19,9 +24,11 @@ fetch(api).then(function (response) {
     show(data)
   }
 
-  getapi(api_url)
+  getapi(all_tweets_url)
+  
 
   function show(data) { 
+
     let tab =  
         `<tr> 
 
@@ -38,7 +45,7 @@ fetch(api).then(function (response) {
     <td>${r.user.handle} </td> 
     <td>${r.body}</td> 
     <td>${r.created_at}</td>  
-    <td>${r.likes.length}</td>           
+    <td> ${r.likes.length}</td>           
 </tr>`; 
     } 
     // Setting innerHTML as tab variable 
